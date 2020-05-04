@@ -1,0 +1,116 @@
+/*let's use https://coolors.co/ccf5ac-bad29f-808a9f-2c497f-5d2b56*/
+
+* {
+    font-family: "helvetica" sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.square {
+    background-color: #2C497F;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+}
+
+.square.moving-right {
+    animation: moving-right 0.25s linear infinite;
+}
+
+.square.moving-left {
+    animation: moving-left 0.25s linear infinite;
+}
+
+.square.jumping {
+    animation: jumping 0.6s linear forwards !important;
+}
+
+.wall {
+    background-color: #3D2B56;
+    position: absolute;
+}
+
+#board-outer {
+    background-color: #CCF5AC;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+@keyframes jumping {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    10% {
+        transform: scale(0.8, 1.2);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    } 
+}
+
+@keyframes moving-right {
+    0% {
+        transform: rotate(0deg) translate(0px, 0px);
+    }
+
+    50% {
+        transform: rotate(45deg) translate(-10px, -5px);
+    }
+
+    100% {
+        transform: rotate(90deg) translate(0px, 0px);
+    }
+}
+
+@keyframes moving-left {
+    0% {
+        transform: rotate(0deg) translate(0px, 0px);
+    }
+
+    50% {
+        transform: rotate(-45deg) translate(10px, -5px);
+    }
+
+    100% {
+        transform: rotate(-90deg) translate(0px, 0px);
+    }
+}
+
+/* @keyframes moving-right {
+    0% {
+        transform: rotate(0deg) translate(0px, 0px) scale(1, 1);
+    }
+
+    20% {
+        transform: rotate(4deg) translate(-10px, -1px) scale(1.05, 0.95);
+    }
+
+    40% {
+        transform: rotate(-1deg) translate(10px, -8px) scale(0.8, 1.2);
+    }
+
+    100% {
+        transform: rotate(0deg) translate(0px, 0px) scale(1, 1);
+    }
+}
+
+@keyframes moving-left {
+    0% {
+        transform: rotate(0deg) translate(0px, 0px) scale(1, 1);
+    }
+
+    20% {
+        transform: rotate(-4deg) translate(10px, -1px) scale(1.05, 0.95);
+    }
+
+    40% {
+        transform: rotate(1deg) translate(-10px, -8px) scale(0.8, 1.2);
+    }
+
+    100% {
+        transform: rotate(0deg) translate(0px, 0px) scale(1, 1);
+    }
+} */
